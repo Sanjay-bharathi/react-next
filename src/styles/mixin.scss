@@ -1,0 +1,18 @@
+@mixin FJCC {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin FJCB {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin AIC {
+    align-items: center
+}
+
+@mixin FJCBAIC {
+    @include FJCB;
+    @include AIC;
+}

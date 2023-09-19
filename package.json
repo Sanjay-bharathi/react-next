@@ -3,20 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "antd": "^5.8.6",
+    "crypto-js": "^4.1.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "mongoose": "^7.3.2",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
   }
 }
