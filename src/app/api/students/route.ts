@@ -19,7 +19,30 @@ export async function GET() {
 export async function POST(req: any) {
   let { name, age, gender, job } = await req.json();
   await connectMongoDB();
-  const stundents = await Students.create({ name, age, gender, job });
-  if (!stundents) return sendFResponse("Something went wrong");
+  if (!name || !age || !gender || !job) return sendFResponse("Please enter all the fields")
+  const stundent = await Students.create({ name, age, gender, job });
+  if (!stundent) return sendFResponse("Something went wrong");
+  const stundents = await Students.find();
+  return sendSResponse(stundents);
+}
+
+
+export async function DELETE(req: any) {
+  await connectMongoDB();
+  let { id } = await req.json();
+  const stundent = await Students.findByIdAndRemove(id);
+  if (!stundent) return sendFResponse("Something went wrong");
+  const stundents = await Students.find();
+  return sendSResponse(stundents);
+}
+
+
+export async function PUT(req: any) {
+  await connectMongoDB();
+  let { id, name, age, gender, job } = await req.json();
+  if (!name || !age || !gender || !job) return sendFResponse("Please enter all the fields")
+  const updatedStudent = await Students.findByIdAndUpdate(id, { name, age, gender, job }, { new: true });
+  if (!updatedStudent) return sendFResponse("Something went wrong");
+  const stundents = await Students.find();
   return sendSResponse(stundents);
 }

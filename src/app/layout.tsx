@@ -1,13 +1,15 @@
 "use client";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
+
 import "./globals.scss";
 import MobileView from "components/mobile";
 import Header from "components/header";
 import "styles";
 import Sidebar from "components/sidebar";
 import Container from "components/container";
+import StyledComponentsRegistry from "../lib/AntdRegistry";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -33,7 +35,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>{getComponent()}</body>
+      <body className={openSans.className}>
+        <StyledComponentsRegistry>{getComponent()}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

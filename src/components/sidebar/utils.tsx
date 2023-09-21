@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "../../assets/logo.png";
 
 const { Text } = Typography;
 
@@ -63,9 +64,9 @@ export const Nav = (): React.ReactElement => {
       icon: <PieChartOutlined />,
     },
     {
-      key: "students",
-      label: "Students",
-      link: "/students",
+      key: "Employee",
+      label: "Employee",
+      link: "/employee",
       icon: <UsergroupAddOutlined />,
     },
     {

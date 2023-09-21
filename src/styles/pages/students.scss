@@ -3,4 +3,10 @@
     background-color: #e7eef8;
     padding: 2rem 3.5rem;
 
+    .student-table {
+        .utils {
+            display: flex;
+            justify-content: end;
+        }
+    }
 }

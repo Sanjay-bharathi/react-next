@@ -1,3 +1,4 @@
+// @import 'antd/dist/reset.css';
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,22 +6,23 @@
 }
 
 html,
-body {
+body,main {
   max-width: 100vw;
   overflow: hidden;
   height: 100vh;
 }
 
-body{
-  padding: 1rem;
-  background-color: #F5F5F5;
+body {
+  // padding: 1rem;
+  // background-color: #F5F5F5;
 
-  .sidebar-container{
-    min-height: calc(100vh - 2rem);
-  }
-  .main-container{
-    max-height: calc(100vh - 2rem);
-  }
+  // .sidebar-container {
+  //   min-height: calc(100vh - 2rem);
+  // }
+
+  // .main-container {
+  //   max-height: calc(100vh - 2rem);
+  // }
 }
 
 .mobile-view {
@@ -69,7 +71,38 @@ body{
 
 }
 
-.container{
+.container {
   display: grid;
   grid-template-columns: 300px auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  h1{
+    font-size: 2rem;
+  }
+}
+
+.ant-modal{
+  .ant-modal-title{
+    font-size: 24px !important;
+  }
+  .ant-form-item .ant-form-item-label >label{
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.ant-table {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  .ant-table-tbody tr:nth-child(even),
+  .ant-table-thead tr{
+    background-color: #f2f2f3;
+  }
+  .ant-table-tbody tr:hover{
+    background-color: #f2f2f3;
+  }
 }

@@ -23,6 +23,12 @@ const studentSchema = new mongoose.Schema(
     timestamps: true,
     versionKey: false,
     id: true,
+    toJSON: {
+      transform(_: any, data: any) {
+        data.id = data._id;
+        delete data._id;
+      },
+    },
   },
 );
 
