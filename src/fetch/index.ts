@@ -46,7 +46,10 @@ const put = async (url: string, body: BodyInit | null | undefined = null) => {
     return encrypt({ status: false, error });
   }
 };
-const deleteCall = async (url: string, body: BodyInit | null | undefined | object) => {
+const deleteCall = async (
+  url: string,
+  body: BodyInit | null | undefined | object,
+) => {
   try {
     const res = await fetch(baseurl + url, {
       cache: "no-store",

@@ -8,9 +8,9 @@ const createStudent = async (body: any) =>
   decrypt(await post(StudentApi.GET_STUDENTS, body));
 
 const deleteStudent = async (id: string) =>
-  decrypt(await deleteCall(StudentApi.DELETE_STUDENTS, {id: id}));
-  
-const updateStudent = async (body: any) =>
-decrypt(await put(StudentApi.GET_STUDENTS, body));
+  decrypt(await deleteCall(StudentApi.DELETE_STUDENTS, { id: id }));
 
-export { getStudents, createStudent,deleteStudent,updateStudent };
+const updateStudent = async (body: any) =>
+  decrypt(await put(StudentApi.GET_STUDENTS, body));
+
+export { getStudents, createStudent, deleteStudent, updateStudent };
