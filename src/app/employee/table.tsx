@@ -63,7 +63,7 @@ const StudentTable = ({ data }: Props) => {
     },
     {
       key: "actions",
-      title: "Job",
+      title: "Action",
       render: (_, record: StudentData) => (
         <>
           <Button
@@ -85,10 +85,10 @@ const StudentTable = ({ data }: Props) => {
   ];
   const router = useRouter();
   const [form] = Form.useForm();
-  const [openAddModal, setOpenAddModal] = useState(false);
+  const [openAddModal, setOpenAddModal] =       useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
 
-  const [selectedEmployee, setSelectedEmployee] = useState({} as StudentData);
+            const [selectedEmployee, setSelectedEmployee] = useState({} as StudentData);
 
   const handleCancelAddEmployee = () => {
     setOpenAddModal(false);
@@ -101,7 +101,8 @@ const StudentTable = ({ data }: Props) => {
     setSelectedEmployee({} as StudentData);
   };
 
-  const handleOpenAddModal = () => {
+  const handleOpenAddModal = () => 
+  {
     setOpenAddModal(true);
   };
 
@@ -117,9 +118,11 @@ const StudentTable = ({ data }: Props) => {
   };
 
   const onAddFinish = async () => {
-    const { status } = await createStudent(form.getFieldsValue());
+    const { status } = await createStudent(
+      form.getFieldsValue());
     if (!status) return;
-    notification.success({ message: "Created successfully" });
+    notification.success({ message: 
+      "Created successfully" });
     router.refresh();
     handleCancelAddEmployee();
   };
@@ -135,7 +138,8 @@ const StudentTable = ({ data }: Props) => {
     handleCancelEditEmployee();
   };
 
-  const onDeleteEmployee = async (record: StudentData) => {
+  const onDeleteEmployee = async (record: 
+    StudentData) => {
     const { status } = await deleteStudent(record.id);
     if (!status) return;
     notification.success({ message: "Deleted successfully" });
