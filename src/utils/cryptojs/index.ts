@@ -1,6 +1,6 @@
 var CryptoJS = require("crypto-js");
 
-const ALLOW_CRYPTION = process.env.ALLOW_CRYPTION || "true";
+const ALLOW_CRYPTION = process.env.ALLOW_CRYPTION || "false";
 
 export const encrypt = (data: any) =>
   ALLOW_CRYPTION === "true"
